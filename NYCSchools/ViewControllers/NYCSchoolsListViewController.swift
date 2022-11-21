@@ -40,13 +40,25 @@ class NYCSchoolsListViewController: UIViewController {
         schoolsList.estimatedRowHeight = 120.0
         setupViews()
         highSchoolsService.getData(parser: highSchoolsListparser) { [weak self] data, error in
-            if let schools = data as? [School] {
-                self?.schoolsData = schools
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if let schools = data as? [School] {
+                    self?.schoolsData = schools
+                    
                     self?.schoolsList.reloadData()
+                } else if error != nil {
+                    self?.presentError(error: error)
                 }
             }
         }
+    }
+    
+    func presentError(error: Error?)
+    {
+        let controller = UIAlertController(title: "Error",
+                                           message: error.debugDescription,
+                                           preferredStyle: UIAlertController.Style.alert)
+        controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel))
+        navigationController?.present(controller, animated: true)
     }
     
     private func setupViews()
@@ -86,7 +98,7 @@ extension NYCSchoolsListViewController: UITableViewDelegate {
             fetchSATScoresAndPresentDetailsVC(tableView: tableView, indexPath: indexPath)
         }
     }
-
+    
     func fetchSATScoresAndPresentDetailsVC(tableView: UITableView, indexPath: IndexPath)
     {
         let schoolsDataCopy = schoolsData
@@ -100,17 +112,13 @@ extension NYCSchoolsListViewController: UITableViewDelegate {
                                            tableView:tableView)
                     
                 } else if error != nil {
-                    let controller = UIAlertController(title: "Error",
-                                                       message: error.debugDescription,
-                                                       preferredStyle: UIAlertController.Style.alert)
-                    controller.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel))
-                    self?.navigationController?.present(controller, animated: true)
+                    self?.presentError(error: error)
                     tableView.deselectRow(at: indexPath, animated: true)
                 }
             }
         }
     }
-
+    
     func presentDetailsVC(school: School,
                           satScores:[SATScores],
                           indexPath: IndexPath,

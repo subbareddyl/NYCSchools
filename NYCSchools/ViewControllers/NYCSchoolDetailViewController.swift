@@ -17,7 +17,7 @@ class NYCSchoolDetailViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-
+    
     let scrollView: UIScrollView = {
         let view = UIScrollView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -32,17 +32,17 @@ class NYCSchoolDetailViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     init(school: School, satScores: SATScores?) {
         self.school = school
         self.satScores = satScores
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         title = school.school_name
         descriptionLabel.text = school.overview_paragraph
@@ -50,7 +50,7 @@ class NYCSchoolDetailViewController: UIViewController {
         setupSubviews()
         setupConstraints()
     }
-
+    
     private func spaceView() -> UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +82,7 @@ class NYCSchoolDetailViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
         stackView.addArrangedSubview(titleLabel)
     }
-
+    
     private func setupSubviews() {
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
@@ -121,7 +121,7 @@ class NYCSchoolDetailViewController: UIViewController {
         }
         setupConstraints()
     }
-
+    
     private func setupConstraints() {
         var constraints = [NSLayoutConstraint]()
         constraints += stackView.constraintsToFillSuperView()
