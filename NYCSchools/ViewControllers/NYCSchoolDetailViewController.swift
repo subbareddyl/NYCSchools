@@ -90,21 +90,21 @@ class NYCSchoolDetailViewController: UIViewController {
         stackView.addArrangedSubview(descriptionLabel)
         stackView.addArrangedSubview(spaceView())
         if let satScores = satScores {
-            addHighlightedTitleWith(name: "SAT Scores", stackView: stackView)
-            addDetailWith(title: "Number of SAT test takers", detail: satScores.num_of_sat_test_takers, stackView: stackView)
-            addDetailWith(title: "SAT critical reading avg score", detail: satScores.sat_critical_reading_avg_score, stackView: stackView)
-            addDetailWith(title: "SAT match avg score", detail: satScores.sat_math_avg_score, stackView: stackView)
-            addDetailWith(title: "SAT writing avg score", detail: satScores.sat_writing_avg_score, stackView: stackView)
+            addHighlightedTitleWith(name: "SAT Scores:", stackView: stackView)
+            addDetailWith(title: "Number of SAT test takers:", detail: satScores.num_of_sat_test_takers, stackView: stackView)
+            addDetailWith(title: "SAT critical reading avg score:", detail: satScores.sat_critical_reading_avg_score, stackView: stackView)
+            addDetailWith(title: "SAT match avg score:", detail: satScores.sat_math_avg_score, stackView: stackView)
+            addDetailWith(title: "SAT writing avg score:", detail: satScores.sat_writing_avg_score, stackView: stackView)
         }
-        addHighlightedTitleWith(name: "Additional Information", stackView: stackView)
+        addHighlightedTitleWith(name: "Additional Information:", stackView: stackView)
         if let phoneNumber = school.phone_number {
-            addDetailWith(title: "Phone number", detail: phoneNumber, stackView: stackView)
+            addDetailWith(title: "Phone number:", detail: phoneNumber, stackView: stackView)
         }
         if let schoolEmail = school.school_email {
-            addDetailWith(title: "Email", detail: schoolEmail, stackView: stackView)
+            addDetailWith(title: "Email:", detail: schoolEmail, stackView: stackView)
         }
         if let bus = school.bus {
-            addDetailWith(title: "Bus", detail: bus, stackView: stackView)
+            addDetailWith(title: "Bus:", detail: bus, stackView: stackView)
         }
         if let subway = school.subway {
             let subwayTitleLabel = UILabel()
