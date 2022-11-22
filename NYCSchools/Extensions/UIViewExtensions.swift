@@ -17,4 +17,14 @@ extension UIView {
                 superView.topAnchor.constraint(equalTo: topAnchor),
                 superView.bottomAnchor.constraint(equalTo: bottomAnchor)]
     }
+    
+    func findViewWithAccessibilityIdentifier(identifier: String) -> UIView? {
+        if accessibilityIdentifier == identifier {return self}
+        for view in subviews {
+            if let view = view.findViewWithAccessibilityIdentifier(identifier: identifier) {
+                return view
+            }
+        }
+        return nil
+    }
 }

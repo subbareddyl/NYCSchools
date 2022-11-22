@@ -13,6 +13,7 @@ class SchoolCell: UITableViewCell {
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "school name"
         return label
     }()
     let finalGradesLabel = {
@@ -20,6 +21,7 @@ class SchoolCell: UITableViewCell {
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "final grades"
         return label
     }()
     let neighborhoodLabel = {
@@ -27,6 +29,7 @@ class SchoolCell: UITableViewCell {
         label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityIdentifier = "neighborhood"
         return label
     }()
 
