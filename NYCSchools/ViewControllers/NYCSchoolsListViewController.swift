@@ -14,6 +14,7 @@ class NYCSchoolsListViewController: UIViewController {
     let highSchoolsListparser = NYCHighSchoolsDataParser()
     let SATScoresListParser = SATScoresDataParser()
     let schoolsList = UITableView()
+    let loadingIndicator = UIActivityIndicatorView()
     var schoolsData = [School]()
     var SATScoresData = [SATScores]()
     
@@ -39,8 +40,11 @@ class NYCSchoolsListViewController: UIViewController {
         schoolsList.rowHeight = UITableView.automaticDimension
         schoolsList.estimatedRowHeight = 120.0
         setupViews()
+        loadingIndicator.startAnimating()
         highSchoolsService.getData(parser: highSchoolsListparser) { [weak self] data, error in
             DispatchQueue.main.async {
+                self?.loadingIndicator.stopAnimating()
+                self?.loadingIndicator.removeFromSuperview()
                 if let schools = data as? [School] {
                     self?.schoolsData = schools
                     
@@ -64,11 +68,17 @@ class NYCSchoolsListViewController: UIViewController {
     private func setupViews()
     {
         view.addSubview(schoolsList)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loadingIndicator)
         var constraints = [NSLayoutConstraint]()
         constraints.append(view.leftAnchor.constraint(equalTo: schoolsList.leftAnchor))
         constraints.append(view.rightAnchor.constraint(equalTo: schoolsList.rightAnchor))
         constraints.append(view.topAnchor.constraint(equalTo: schoolsList.topAnchor))
         constraints.append(view.bottomAnchor.constraint(equalTo: schoolsList.bottomAnchor))
+        constraints.append(loadingIndicator.widthAnchor.constraint(equalToConstant: 50))
+        constraints.append(loadingIndicator.heightAnchor.constraint(equalToConstant: 50))
+        constraints.append(loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor))
+        constraints.append(loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor))
         NSLayoutConstraint.activate(constraints)
     }
 }
