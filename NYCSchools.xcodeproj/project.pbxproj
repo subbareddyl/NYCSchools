@@ -25,6 +25,7 @@
 		036B4854292B6C6C00AB0BF2 /* SATScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B4853292B6C6C00AB0BF2 /* SATScores.swift */; };
 		036B4856292B6EDD00AB0BF2 /* SATScoresDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B4855292B6EDD00AB0BF2 /* SATScoresDataParser.swift */; };
 		036B4858292B7BBE00AB0BF2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B4857292B7BBE00AB0BF2 /* Config.swift */; };
+		03E6E2C1292CE14C00093C85 /* SATScoresDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		036B4853292B6C6C00AB0BF2 /* SATScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScores.swift; sourceTree = "<group>"; };
 		036B4855292B6EDD00AB0BF2 /* SATScoresDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresDataParser.swift; sourceTree = "<group>"; };
 		036B4857292B7BBE00AB0BF2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresDataParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				036B4824292A04DD00AB0BF2 /* NYCHighSchoolsDataParserTests.swift */,
+				03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E6E2C1292CE14C00093C85 /* SATScoresDataParserTests.swift in Sources */,
 				036B4825292A04DD00AB0BF2 /* NYCHighSchoolsDataParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
