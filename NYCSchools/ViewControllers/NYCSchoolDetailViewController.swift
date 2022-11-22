@@ -15,6 +15,7 @@ class NYCSchoolDetailViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.accessibilityIdentifier = "description"
         return label
     }()
     
@@ -65,11 +66,13 @@ class NYCSchoolDetailViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = title
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)
+        titleLabel.accessibilityIdentifier = title
         stackView.addArrangedSubview(titleLabel)
         let detailLabel = UILabel()
         detailLabel.text = detail
         detailLabel.numberOfLines = 0
         detailLabel.font = UIFont.systemFont(ofSize: 16)
+        detailLabel.accessibilityIdentifier = "\(title)-detail"
         stackView.addArrangedSubview(detailLabel)
         stackView.addArrangedSubview(spaceView())
     }

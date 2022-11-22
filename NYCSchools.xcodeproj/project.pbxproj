@@ -27,6 +27,7 @@
 		036B4858292B7BBE00AB0BF2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B4857292B7BBE00AB0BF2 /* Config.swift */; };
 		03E6E2C1292CE14C00093C85 /* SATScoresDataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */; };
 		03E6E2C3292CE38B00093C85 /* SchoolCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6E2C2292CE38B00093C85 /* SchoolCellTests.swift */; };
+		03E6E2C5292CE95300093C85 /* NYCSchoolDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6E2C4292CE95300093C85 /* NYCSchoolDetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		036B4857292B7BBE00AB0BF2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresDataParserTests.swift; sourceTree = "<group>"; };
 		03E6E2C2292CE38B00093C85 /* SchoolCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCellTests.swift; sourceTree = "<group>"; };
+		03E6E2C4292CE95300093C85 /* NYCSchoolDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolDetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				036B4824292A04DD00AB0BF2 /* NYCHighSchoolsDataParserTests.swift */,
 				03E6E2C0292CE14C00093C85 /* SATScoresDataParserTests.swift */,
 				03E6E2C2292CE38B00093C85 /* SchoolCellTests.swift */,
+				03E6E2C4292CE95300093C85 /* NYCSchoolDetailViewControllerTests.swift */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			files = (
 				03E6E2C1292CE14C00093C85 /* SATScoresDataParserTests.swift in Sources */,
 				03E6E2C3292CE38B00093C85 /* SchoolCellTests.swift in Sources */,
+				03E6E2C5292CE95300093C85 /* NYCSchoolDetailViewControllerTests.swift in Sources */,
 				036B4825292A04DD00AB0BF2 /* NYCHighSchoolsDataParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
